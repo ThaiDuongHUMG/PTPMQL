@@ -1,0 +1,21 @@
+using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DemoMVC.Controllers
+{
+    public class DemoController : Controller
+    {
+        public IActionResult Index()
+       {
+        return View();
+       }
+
+       [HttpPost]
+       public IActionResult Index(string fName , string ABC )
+       {
+        string strResult = "Hello" + fName + "-" + ABC ;
+        ViewBag.thongbao = strResult;
+        return View();
+       }
+}
+}
