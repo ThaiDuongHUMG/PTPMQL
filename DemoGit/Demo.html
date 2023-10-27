@@ -1,40 +1,76 @@
+Using The id Attribute
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+</style>
+</head>
 <body>
 
-<h2>NGuyen Thai Duong 2021050162</h2>
-<p>You can use the height and width attributes to specify the size of the iframe:</p>
+<h2>The id Attribute</h2>
+<p>Use CSS to style an element with the id "myHeader":</p>
 
-<iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"></iframe>
+<h1 id="myHeader">nguyen thai duong 2021050162</h1>
 
 </body>
 </html>
 
-Iframe - Remove the Border
+Difference Between Class and ID
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+/* Style the element with the id "myHeader" */
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Style all elements with the class name "city" */
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+} 
+</style>
+</head>
 <body>
 
-<h2></h2>
-<p>To remove the default border of the iframe, use CSS:</p>
 
-<iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"></iframe>
+<!-- An element with a unique id -->
+<h1 id="myHeader"></h1>
 
+<!-- Multiple elements with same class -->
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city">Paris</h2>
+	@@ -69,86 +61,20 @@ <h2 class="city">Tokyo</h2>
 </body>
 </html>
 
-Iframe - Target for a Link
+
+Using The id Attribute in JavaScript
 <!DOCTYPE html>
 <html>
 <body>
 
-<h2>Iframe - Target for a Link</h2>
+<h1 id="myHeader">8!</h1>
+<button onclick="displayResult()">Change text</button>
 
-<iframe src="demo_iframe.htm" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
-
-<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
-
-<p></p>
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
 
 </body>
 </html>
