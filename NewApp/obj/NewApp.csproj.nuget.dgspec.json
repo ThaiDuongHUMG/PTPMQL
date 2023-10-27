@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\PTPMQL\\NewApp\\NewApp.csproj": {}
+    "C:\\PTPMQL\\NewApp\\NewApp.csproj": {}
   },
   "projects": {
-    "c:\\PTPMQL\\NewApp\\NewApp.csproj": {
+    "C:\\PTPMQL\\NewApp\\NewApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\PTPMQL\\NewApp\\NewApp.csproj",
+        "projectUniqueName": "C:\\PTPMQL\\NewApp\\NewApp.csproj",
         "projectName": "NewApp",
-        "projectPath": "c:\\PTPMQL\\NewApp\\NewApp.csproj",
+        "projectPath": "C:\\PTPMQL\\NewApp\\NewApp.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "c:\\PTPMQL\\NewApp\\obj\\",
+        "outputPath": "C:\\PTPMQL\\NewApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
