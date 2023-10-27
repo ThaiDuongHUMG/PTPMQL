@@ -1,17 +1,31 @@
 <html>
 <body>
 
-<h1>Nguyen Thai DUong 2021050162</h1>
-<div id="result"></div>
+<p>Nguyen Thai Duong 2021050162 <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
 
 <script>
-if(typeof(EventSource) !== "undefined") {
-  var source = new EventSource("demo_sse.php");
-  source.onmessage = function(event) {
-    document.getElementById("result").innerHTML += event.data + "<br>";
-  };
-} else {
-  document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+var w;
+
+function startWorker() {
+  if(typeof(Worker) !== "undefined") {
+    if(typeof(w) == "undefined") {
+      w = new Worker("demo_workers.js");
+    }
+    w.onmessage = function(event) {
+      document.getElementById("result").innerHTML = event.data;
+    };
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+  }
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
 }
 </script>
 
