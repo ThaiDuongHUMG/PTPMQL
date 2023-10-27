@@ -2,108 +2,28 @@
 <html>
 <body>
 
-<div id="result"></div>
-Dao Trong Hieu 20210502058
-<script>
-// Check browser support
-if (typeof(Storage) !== "undefined") {
-  // Store
-  localStorage.setItem("lastname", "Smith");
-  // Retrieve
-  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-} else {
-  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-}
-</script>
-<!DOCTYPE HTML>
-<html>	<html>
-<head>
-<style>
-#div1 {
-  width: 350px;
-  height: 70px;
-  padding: 10px;
-  border: 1px solid #aaaaaa;
-}
-</style>
-<script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-</script>
-</head>
-<body>	<body>
-
-
-<p>Dao Trong Hieu 2021050258.</p>	<p>Dao Trong Hieu 2021050258:</p>
-
-
-<button onclick="getLocation()">Try It</button>	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
-<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
-
-
-<p id="demo"></p>	</body>
-</html>
-
-
-More Examples
-<!DOCTYPE HTML>
-<html>
-<head>
-<style>
-#div1, #div2 {
-  float: left;
-  width: 100px;
-  height: 35px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-}
-</style>
-<script>	<script>
-var x = document.getElementById("demo");	function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-
-function getLocation() {	function drag(ev) {
-  if (navigator.geolocation) {	  ev.dataTransfer.setData("text", ev.target.id);
-    navigator.geolocation.getCurrentPosition(showPosition);	
-  } else { 	
-    x.innerHTML = "Geolocation is not supported by this browser.";	
-  }	
-}	}
-
-
-function showPosition(position) {	function drop(ev) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 	  ev.preventDefault();
-  "<br>Longitude: " + position.coords.longitude;	  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}	}
-</script>	</script>
-</head>
-<body>
-
-<h2>Drag and Drop</h2>
 <p>Nguyen Thai DUong 2021050162.</p>
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
-</div>
+<button onclick="getLocation()">Try It</button>
 
-<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<p id="demo"></p>
 
+<script>
+var x = document.getElementById("demo");
 
-</body>	</body>
-</html>	</html>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
